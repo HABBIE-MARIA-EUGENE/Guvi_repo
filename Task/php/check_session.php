@@ -9,9 +9,9 @@ header('Content-Type: application/json');
 
 $redis = new RedisClient([
     'scheme' => 'tcp',
-    'host'   => 'redis-17845.c261.us-east-1-4.ec2.redns.redis-cloud.com',
+    'host'   => 'redi........redis-cloud.com',
     'port'   => 17845,
-    'password' => 'sQSp8ptFjvGwolUqwtKQxu9AXPrpjEoU'
+    'password' => 'xxxxxxx'
 ]);
 
 
@@ -57,3 +57,4 @@ try {
     echo json_encode(['status' => 'error', 'message' => 'MongoDB error: ' . $e->getMessage()]);
 }
 ?>
+
