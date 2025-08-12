@@ -1,0 +1,47 @@
+body {
+  background-color: #f0f2f5;
+}
+body .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body .card {
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+body .card h3 {
+  margin: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 30px;
+}
+body .card #loginForm .form-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #555;
+}
+body .card #loginForm .form-control {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+body .card #loginForm #response {
+  font-size: 14px;
+  color: green;
+  margin-top: 10px;
+}
+body .card #loginForm .btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-size: 18px;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/*# sourceMappingURL=login.css.map */
