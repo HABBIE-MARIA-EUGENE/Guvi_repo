@@ -1,0 +1,42 @@
+/*
+
+@use "sass:math";
+@debug "Testing Debug SAAS";
+
+@debug 10px+25;   // no diff units could be added
+
+@debug math.max(10px, 4px, 7px); // returns maximum value
+@debug math.min(10px, 4px, 7px); // returns minimum value
+@debug math.ceil(10.5px); // returns 11px round up
+@debug math.floor(10.5px); // returns 10px removes decimal
+@debug math.round(10.5px); // returns 11px round to nearest
+@debug math.abs(-10px); // returns 10px absolute value
+@debug math.sqrt(16); // returns 4px square root 
+@debug math.pow(10,2); // returns 8px 2 raised to the power of 3
+
+
+@debug math.is-unitless(100); // returns true
+@debug math.is-unitless(100px); // returns false
+@debug math.unit(100);
+@debug math.unit(100px); // returns px
+@debug math.unit(5px* 10px); // returns px*px
+
+@debug math.compatible(1px,1px);
+@debug math.compatible(1px, 1cm); // returns false
+
+
+// division needs to be done with math.div
+
+@debug math.div(10px, 2); // returns 5px division
+@debug math.div(10, 2); // returns 5 division without unit
+
+@debug math.random(10); // returns random number between 0 and 10
+
+
+
+
+//each control directive
+
+// see sass/_colors.scss for the usage of each control directive
+
+

@@ -1,0 +1,25 @@
+$bg-primary-color: blue;
+$bg-success-color: green;
+$bg-danger-color: orange;
+
+.btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: $font-size-xl;
+}
+
+.btn-primary {
+    background-color: $bg-primary-color;
+    color: white;
+}
+
+.btn-success {
+    background-color:$bg-success-color;
+    color: white;
+}
+
+.btn-danger {
+    background-color: $bg-danger-color;
+    color: white;
+}

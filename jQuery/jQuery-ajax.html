@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>.ajax() in jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head> 
+
+<body>
+
+    <input type="button" id="btn" value="Click">
+    <div id="box"></div>
+
+    <script>
+
+        $(document).ready(function() {
+        $('#btn').click(function() {
+
+            $.ajax({
+                url:"get_data.php",
+                type:"post",
+                data:{name:"Tom",age:25},
+                dataType:"html",
+                beforeSend:function() {
+                    $("#box").text("loading...");
+
+                },
+                success:function(res) {
+                    $("#box").html(res);
+
+                },
+                error:function(XHR,txt,error){
+
+                },
+                complete:function(xhr,txt){
+
+                }
+            });
+
+        });
+
+        });    
+            
+    </script>
+
+
+</body>
+</html>

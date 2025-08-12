@@ -1,0 +1,39 @@
+//Maps
+/*
+
+$colors: (
+    "primary": blue,
+    "success": green,
+    "danger": red,
+    "warning": yellow,
+    "info": cyan,
+);
+*/
+
+/*
+@debug map-get($colors, "primary"); // returns blue
+@debug map-get($colors, "success"); // returns green
+
+@debug map-has-key($colors, "primary" ); // returns true
+@debug map-has-key($colors, "secondary" ); // returns false
+
+@debug map-remove($colors, "info" ); // returns map without info key 
+*/
+
+
+/*
+@debug map-merge(
+    $colors,
+    (
+        "secondary": grey,
+        "dark": black,
+        "light": white
+    )
+); // returns merged map with new keys
+
+*/
+
+
+//each control directive
+
+// see sass/_colors.scss for the usage of each control directive

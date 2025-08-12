@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Selectors</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head> 
+<body>
+    <div id="uniqueElement">Content</div>
+    <div class="box">content 1</div>
+    <div class="box">content 2</div>
+
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+
+    <form action="">
+        <input type="text" placeholder="Enter text">
+        <input type = "password" placeholder="Enter password">
+        <input type = "text" name="username">
+        <input type = "text" name="email">
+    </form>
+
+    <a href="http://example.com">A link</a>
+    <a href="http://example.org">B link</a>
+    <a href="http://google.com">G link</a>
+
+
+    
+    <div class="container">
+        <p>Para 1</p>
+        <p>Para 2</p>
+        <h3>heading 3</h3>
+    </div>
+
+    <div class="parent">
+        <p>Direct Child</p>
+        <div>
+            <p>Not a Direct Child</p>
+        </div>
+
+    </div>
+
+
+    <script>
+        
+
+        // ID selector
+        // Using jQuery to select an element by its ID know as ID selector.
+        $('#uniqueElement').text('New content for the id uniqueElement ');
+        
+        // Class selector
+        // Using jQuery to select elements by their class name known as class selector.
+        $('.box').css('background-color', 'skyblue');
+
+        // Element selector
+        //$('p').hide();
+
+        // Attribute selector
+        $('[placeholder]').css('border', '2px solid red');
+
+        // Value selector
+        $('[name = "username"]').val('Default Username');
+
+        // Partial value selector
+        $('a[href*="example"]').css('color', 'red');
+        $('a[href^="http://google"]').css('color', 'green');
+
+        // Descendant selector
+        $('.container p').css('color', 'purple');
+
+        // Child selector
+        $('.parent > p').css('font-weight', 'bold');
+        
+        
+    </script>
+</body>
+</html> 

@@ -1,0 +1,15 @@
+// variable
+@import "colors";
+$primary-color: blue;
+$secondary-color: grey;
+$font-family: 'Roboto',sans-serif;
+
+
+$base-font-size: 1rem;  //1rem = 16px
+
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+
+
