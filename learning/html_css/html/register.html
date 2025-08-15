@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>REGISTER</title>
+    
+    <!--for mobile view auto adj.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Register</h1>
+    <p>by using form</p>
+
+    <h2>Basics</h2>
+    <p>This is a praragraph <strong>Strong</strong> adds bold to text</p>
+    <a href="https://example.com" target="_blank" rel="noopener">Example link</a>
+    <img src="https://via.placeholder.com/120" alt="placeholder avatar">
+
+    <h3>Interests</h3>
+    <ul>
+        <li>AI/ML</li>
+        <li>Web dev</li>
+        <li>Music</li>
+    </ul>
+
+    <!--semantic tags -->
+    <header><h1>Register</h1></header>
+    <main>
+        <!--content--><h4>Hi there</h4>
+    </main>
+    <footer><small>@2025</small></footer>
+
+
+    <!--form,no submit ,just html alone-->
+
+    <main>
+        <form id="regFrm" novalidate>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Enter email here!">
+            </div>
+
+            <div class="form-row">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" minlength="6" required>
+            </div>
+
+            <button id="regBtn" type="button">Register</button>
+
+        </form>
+    </main>
+
+    
+
+
+
+
+</body>
+
+</html>
