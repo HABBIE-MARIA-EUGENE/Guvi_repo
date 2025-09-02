@@ -8,9 +8,9 @@ def root():
         "message":"hello from fast api!"
     }
 
-@app.get("/items/{name}")
-def read_item(name):
-    return {"name": name}
+# @app.get("/items/{name}")
+# def read_item(name):
+#     return {"name": name}
 
 @app.get("/date/{date}")
 def read_item(date : int):
@@ -42,3 +42,23 @@ def get_model(model_name: ModelName):
         return {"model_name": model_name, "message": "LeCNN all the images"}
 
     return {"model_name": model_name, "message": "Have some residuals"}
+
+
+fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
+
+@app.get("/items")
+def list_items(skip: int = 0, limit: int = 10):
+    return fake_items_db[skip: skip+limit]
+
+
+from typing import Optional
+
+@app.get("/items/{item_id}")
+def get_item(item_id: str, q: str | None = None):
+    if q:
+        return{"item_id": item_id, "q": q}
+    return{"item_id": item_id}
+
+@app.get("/users/")
+def read_user(name: str):
+    return {"user_name": name}
