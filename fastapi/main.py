@@ -62,3 +62,7 @@ def get_item(item_id: str, q: str | None = None):
 @app.get("/users/")
 def read_user(name: str):
     return {"user_name": name}
+
+@app.get("/path")
+def hello():
+    return {"message": "hello world !"}
