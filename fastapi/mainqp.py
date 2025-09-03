@@ -1,6 +1,6 @@
 #query parameter validation
 
-from fastapi import FastAPI
+from fastapi import FastAPI,Query
 
 emp = [
     {'id': 101, 'name': 'CSE', 'place': 'Chennai'},
@@ -16,7 +16,7 @@ app = FastAPI()
 
 
 @app.get("/display")
-def viewforquery(id: int):
+def viewforquery(id: int = Query(ge=100,le=200)):
     for e in emp:
         if e['id']==id:
             return e
