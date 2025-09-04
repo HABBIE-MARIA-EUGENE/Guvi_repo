@@ -1,3 +1,8 @@
+# request body & pydantic
+# Without Pydantic → you write manual validation for every field.
+
+# With Pydantic → you just declare a BaseModel, and validation happens automatically.
+
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing import Optional
