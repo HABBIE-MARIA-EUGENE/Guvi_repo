@@ -59,7 +59,7 @@ def protected_route(token: str = Depends(get_token_header)):
     return{"message": "Access granted"}
 
 
-#db with sqlalchemy
+# db with sqlalchemy
 # from sqlalchemy import create_engine, Column, Integer, String
 # from sqlalchemy.orm import sessionmaker, declarative_base,
 
@@ -70,4 +70,44 @@ def protected_route(token: str = Depends(get_token_header)):
 
 # engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 # SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush= False)
+#
+#
+# unfinished
+#
+
+#dependency to get db session
+
+# from fastapi import Depends
+
+# def get_db():
+#     db = SessionLocal()
+#     try:
+#         yield db
+#     finally:
+#         db.close()
+
+#Auth.
+#basic auth, Oauth2, JWT supported.
+
+from fastapi.security import OAuth2PasswordBearer
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+@app.get("/me")
+async def read_me(token: str = Depends(oauth2_scheme)):
+    return {"token": token}
+
+#middleware - runs bef/aft requests
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 
