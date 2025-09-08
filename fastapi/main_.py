@@ -110,4 +110,34 @@ app.add_middleware(
 )
 
 
+#background tasks : to run async work after returning resp.
 
+from fastapi import BackgroundTasks
+
+def write_log(message: str):
+    with open("log.txt", "a") as f:
+        f.write(message + "\n")
+
+@app.post("/log")
+async def log_message(message: str, background_tasks: BackgroundTasks):
+    background_tasks.add_task(write_log, message)
+    return{"message": "logging started"}
+
+#file uploads
+
+from fastapi import File, UploadFile
+
+@app.post("/upload")
+async def upload(file: UploadFile = File(...)):
+    return{"filename": file.filename}
+
+#WebSockets
+from fastapi import WebSocket
+
+@app.websocket("/ws")
+async def websocket_endpoint(ws: WebSocket):
+    await ws.accept()
+    await ws.send_text("Hello WebSocket!")
+    await ws.close()
+
+    
