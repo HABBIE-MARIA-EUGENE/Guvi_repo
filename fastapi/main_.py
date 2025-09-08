@@ -45,3 +45,17 @@ class User(BaseModel):
 async def get_user(user_id: int):
     return{"id": user_id, "name": "Eugene"}
 
+#Dependency Injection (Depends) to share logic like db conns , auth etc.,
+
+from fastapi import Depends, HTTPException
+
+def get_token_header(token: str = "secret"):
+    if token != "secret":
+        raise HTTPException(status_code=400, detail="Invalid Token")
+    return token
+
+@app.get("/protected")
+def protected_route(token: str = Depends(get_token_header)):
+    return{"message": "Access granted"}
+
+
