@@ -59,3 +59,15 @@ def protected_route(token: str = Depends(get_token_header)):
     return{"message": "Access granted"}
 
 
+#db with sqlalchemy
+# from sqlalchemy import create_engine, Column, Integer, String
+# from sqlalchemy.orm import sessionmaker, declarative_base,
+
+# DATABASE_URL = (
+#     f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB_NAME}"
+#     f"?ssl_ca={SSL_CA}"
+# )
+
+# engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+# SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush= False)
+
